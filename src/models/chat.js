@@ -4,12 +4,14 @@ import message from './message.js';
 
 const chat = new mongoose.Schema({
     authors: {
-        type: [Object],
+        type: [mongoose.Types.ObjectId],
         required: true,
     },
     messages: {
         type: [message],
         required: true,
-        default: []
+        default: [],
     },
 });
+
+export default chat;
